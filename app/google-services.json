@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "450740308364",
+    "firebase_url": "https://plejen-f2bef.firebaseio.com",
+    "project_id": "plejen-f2bef",
+    "storage_bucket": "plejen-f2bef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450740308364:android:6f0a9a143be1fd52",
+        "android_client_info": {
+          "package_name": "sovsen.plejeren"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450740308364-he5qtult129u0in3hv2ne44bcjpehvml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sovsen.plejeren",
+            "certificate_hash": "8d2aad41c4174ec0dd078a6c6c5df51b68ba5d87"
+          }
+        },
+        {
+          "client_id": "450740308364-mt41tojej45f49uh7utqtko4i3rfeac3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUjDKYb-gb6tcmtaZGuBxISfJZuhUBkv4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450740308364-mt41tojej45f49uh7utqtko4i3rfeac3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
