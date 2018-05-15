@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "450740308364-a9sfpbdamke373nv2cj7path8cqnsan2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sovsen.plejeren",
+            "certificate_hash": "9388e34a4af934fd11daa45c01def34984008365"
+          }
+        },
+        {
           "client_id": "450740308364-he5qtult129u0in3hv2ne44bcjpehvml.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
