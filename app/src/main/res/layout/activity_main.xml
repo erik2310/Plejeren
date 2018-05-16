@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
-        android:text="@string/hello_plejeren! Velkommen til Pinen & Plejen!"
+        android:text="Hello_plejeren! Velkommen til Pinen og Plejen!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
