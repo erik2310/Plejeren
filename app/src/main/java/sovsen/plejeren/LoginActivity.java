@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     // Deklarer en EditText variabel
     private EditText mEmail_field;
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Deklarer en TextView variabel
     private TextView mForgot_password_view;
+    private TextView mCreate_user_view;
 
     // Deklarer en Button variabel
     private Button mLogin_button;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         // Sætter field med id email_field_view til mEmail_field variabel
         mEmail_field = (EditText) findViewById(R.id.email_field_view);
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         mForgot_password_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent openForgotpassword = new Intent(MainActivity.this, ForgotpasswordActivity.class);
+                Intent openForgotpassword = new Intent(LoginActivity.this, ForgotpasswordActivity.class);
                 startActivity(openForgotpassword);
             }
         });
@@ -87,15 +88,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Login fuldført!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Login fuldført!", Toast.LENGTH_LONG).show();
                     FirebaseUser user = mAuth.getCurrentUser();
 
-                    Intent openGoogleMaps = new Intent(MainActivity.this, MapsActivity.class);
+                    Intent openGoogleMaps = new Intent(LoginActivity.this, MapsActivity.class);
                     startActivity(openGoogleMaps);
 
                 } else {
 
-                    Toast.makeText(MainActivity.this, "Login fejlede!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Login fejlede!", Toast.LENGTH_LONG).show();
                 }
             }
         });
