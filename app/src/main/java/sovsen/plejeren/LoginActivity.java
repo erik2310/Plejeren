@@ -46,6 +46,9 @@ public class LoginActivity extends AppCompatActivity {
         // Sætter view med id forgot_password_view til mForgot_password_view variabel
         mForgot_password_view = (TextView) findViewById(R.id.forgot_password_view);
 
+        // Sætter view med id create_user_view til mCreate_user_view variabel
+        mCreate_user_view = (TextView) findViewById(R.id.create_user_view);
+
         // Sætter knappen med id login_button til mLogin_button variabel
         mLogin_button = (Button) findViewById(R.id.login_button);
 
@@ -71,6 +74,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openForgotpassword = new Intent(LoginActivity.this, ForgotpasswordActivity.class);
                 startActivity(openForgotpassword);
+            }
+        });
+
+        mCreate_user_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openCreateUser = new Intent(LoginActivity.this, CreateUserActivity.class);
+                startActivity(openCreateUser);
             }
         });
     }
