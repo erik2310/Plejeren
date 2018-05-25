@@ -14,4 +14,9 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+public void svar1_isCorrect() throws Exception {
+    int svarA = 1;
+    assertEquals(svarA, 2);
+    }
 }
