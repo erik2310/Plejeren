@@ -47,6 +47,7 @@
         <activity android:name=".CreateUserActivity" />
         <activity android:name=".MenuActivity">
             <intent-filter>
+                <action android:name="sovsen.plejeren.MenuActivity"/>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

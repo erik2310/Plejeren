@@ -102,8 +102,11 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Login fuldført!", Toast.LENGTH_LONG).show();
                     FirebaseUser user = mAuth.getCurrentUser();
 
-                    Intent openGoogleMaps = new Intent(LoginActivity.this, MapsActivity.class);
-                    startActivity(openGoogleMaps);
+                    Intent openMenu = new Intent(LoginActivity.this, MenuActivity.class);
+                    startActivity(openMenu);
+
+                    /*Intent openGoogleMaps = new Intent(LoginActivity.this, MapsActivity.class);
+                    startActivity(openGoogleMaps);*/
 
                 } else {
 

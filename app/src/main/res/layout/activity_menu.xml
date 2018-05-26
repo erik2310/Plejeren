@@ -2,20 +2,17 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/date"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context="sovsen.plejeren.MenuActivity">
 
     <ImageView
         android:id="@+id/byskjold"
-        android:layout_width="163dp"
-        android:layout_height="210dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/byskjold"
         android:contentDescription="@string/byskjold_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,52 +20,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/byskjold" />
 
-    <EditText
-        android:id="@+id/arbejdsplan"
-        android:layout_width="112dp"
-        android:layout_height="60dp"
+    <Button
+        android:id="@+id/Arbejdsplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:freezesText="false"
-        android:hint="@string/Arbejdsplan"
-        android:inputType="text"
-        android:linksClickable="true"
-        android:singleLine="true"
         android:text="@string/Arbejdsplan"
-        android:textStyle="normal|bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.14"
+        tools:textAlignment="center"
+        tools:textSize="18sp" />
 
-    <EditText
+    <Button
         android:id="@+id/tidsstempling"
-        android:layout_width="134dp"
-        android:layout_height="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:ems="10"
-        android:freezesText="false"
-        android:hint="@string/TidsStempling"
-        android:inputType="text"
         android:text="@string/TidsStempling"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875"
-        tools:text="@string/TidsStempling" />
+        app:layout_constraintVertical_bias="0.807"
+        tools:textAlignment="center"
+        tools:textSize="18sp" />
 </android.support.constraint.ConstraintLayout>
