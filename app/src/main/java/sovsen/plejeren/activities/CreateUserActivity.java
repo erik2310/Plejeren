@@ -1,7 +1,9 @@
-package sovsen.plejeren;
+package sovsen.plejeren.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import sovsen.plejeren.R;
 
 public class CreateUserActivity extends AppCompatActivity {
 
