@@ -4,4 +4,8 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="todo">TODO</string>
+    <string name="byskjold_image">byskjold image</string>
+    <string name="Arbejdsplan">Arbejdsplan</string>
+    <string name="arbejdsplan">Arbejdsplan</string>
+    <string name="TidsStempling">Tids Stempling</string>
 </resources>
