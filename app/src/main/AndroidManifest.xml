@@ -40,9 +40,7 @@
             android:label="@string/title_activity_maps">
         </activity>
         <activity android:name=".activities.CreateUserActivity" />
-        <activity android:name=".activities.MenuActivity">
-
-        </activity>
+        <activity android:name=".activities.MenuActivity" />
     </application>
 
 </manifest>
