@@ -88,17 +88,19 @@ public class CreateUserActivity extends AppCompatActivity {
 
                     key = (Long) one_time_keys_map.get(i);
 
-                    if (one_time_key.equals(String.valueOf(key))) {
+                    if (!one_time_key.equals("0")) {
+                        if (one_time_key.equals(String.valueOf(key))) {
 
-                        // Sletter værdien når den er brugt
-                        deleteValueInOneTimeKeys(i);
+                            // Sletter værdien når den er brugt
+                            deleteValueInOneTimeKeys(i);
 
-                        // Opretter en bruger med createAccount metoden
-                        // createAccount(email, password);
+                            // Opretter en bruger med createAccount metoden
+                            createAccount(email, password);
 
-                        account_created = true;
+                            account_created = true;
+                        }
+
                     }
-
                 }
 
                 // Kører hvis kontoen ikke blev oprettet
@@ -156,6 +158,6 @@ public class CreateUserActivity extends AppCompatActivity {
     }
 
     private void deleteValueInOneTimeKeys(int i) {
-        mDatabase.child("One Time Keys").child(String.valueOf(i)).setValue(null);
+        mDatabase.child("One Time Keys").child(String.valueOf(i)).setValue(0);
     }
 }
