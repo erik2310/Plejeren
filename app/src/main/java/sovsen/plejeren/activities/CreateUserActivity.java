@@ -90,8 +90,11 @@ public class CreateUserActivity extends AppCompatActivity {
 
                     if (one_time_key.equals(String.valueOf(key))) {
 
+                        // Sletter værdien når den er brugt
+                        deleteValueInOneTimeKeys(i);
+
                         // Opretter en bruger med createAccount metoden
-                        createAccount(email, password);
+                        // createAccount(email, password);
 
                         account_created = true;
                     }
@@ -150,5 +153,9 @@ public class CreateUserActivity extends AppCompatActivity {
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }
+    }
+
+    private void deleteValueInOneTimeKeys(int i) {
+        mDatabase.child("One Time Keys").child(String.valueOf(i)).setValue(null);
     }
 }
