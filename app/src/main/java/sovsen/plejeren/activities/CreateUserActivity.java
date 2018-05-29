@@ -1,5 +1,6 @@
 package sovsen.plejeren.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -41,7 +42,6 @@ public class CreateUserActivity extends AppCompatActivity {
 
     // Deklarer en Long og String variabel
     Long key;
-    String iToString;
 
     // Deklarer en List variabel
     List<Object> one_time_keys_map;
@@ -98,6 +98,10 @@ public class CreateUserActivity extends AppCompatActivity {
                             createAccount(email, password);
 
                             account_created = true;
+
+                            // Åbner menuen efter brugeren er oprettet
+                            Intent openMenu = new Intent(CreateUserActivity.this, MenuActivity.class);
+                            startActivity(openMenu);
                         }
 
                     }
