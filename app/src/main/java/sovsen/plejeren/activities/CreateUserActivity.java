@@ -98,10 +98,6 @@ public class CreateUserActivity extends AppCompatActivity {
                             createAccount(email, password);
 
                             account_created = true;
-
-                            // Åbner menuen efter brugeren er oprettet
-                            Intent openMenu = new Intent(CreateUserActivity.this, MenuActivity.class);
-                            startActivity(openMenu);
                         }
 
                     }
@@ -130,6 +126,13 @@ public class CreateUserActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText(CreateUserActivity.this, "Brugeren blev oprettet!", Toast.LENGTH_LONG).show();
                     FirebaseUser user = mAuth.getCurrentUser();
+
+                    // Åbner menuen efter brugeren er oprettet
+                    Intent openMenu = new Intent(CreateUserActivity.this, MenuActivity.class);
+                    startActivity(openMenu);
+
+                    // Lukker for activity
+                    finish();
                 } else {
                     Toast.makeText(CreateUserActivity.this, "Brugeren kunne ikke oprettes!", Toast.LENGTH_LONG).show();
                 }

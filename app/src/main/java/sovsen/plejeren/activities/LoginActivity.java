@@ -67,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 // Logger ind med e-mail og password
                 signIn(email, password);
-
             }
         });
 
@@ -107,6 +106,9 @@ public class LoginActivity extends AppCompatActivity {
                     // Åbner menuen efter brugeren er oprettet
                     Intent openMenu = new Intent(LoginActivity.this, MenuActivity.class);
                     startActivity(openMenu);
+
+                    // Lukker for activity
+                    finish();
 
                 } else {
 
