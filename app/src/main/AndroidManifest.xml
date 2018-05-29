@@ -40,7 +40,6 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".activities.CreateUserActivity" />
         <activity android:name=".activities.MenuActivity" />
-        <activity android:name=".activities.WorkplanActivity" />
     </application>
 
 </manifest>
