@@ -24,6 +24,7 @@ public class MenuActivity extends AppCompatActivity {
         mWorkplan_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Åbner ClientListActivity
                 Intent openClientList = new Intent(MenuActivity.this, ClientListActivity.class);
                 startActivity(openClientList);
             }
