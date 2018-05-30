@@ -67,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 // Logger ind med e-mail og password
                 signIn(email, password);
-
             }
         });
 
@@ -104,8 +103,12 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Login fuldført!", Toast.LENGTH_LONG).show();
                     FirebaseUser user = mAuth.getCurrentUser();
 
+                    // Åbner menuen efter brugeren er oprettet
                     Intent openMenu = new Intent(LoginActivity.this, MenuActivity.class);
                     startActivity(openMenu);
+
+                    // Lukker for activity
+                    finish();
 
                 } else {
 

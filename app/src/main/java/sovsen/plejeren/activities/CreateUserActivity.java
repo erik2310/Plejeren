@@ -1,5 +1,6 @@
 package sovsen.plejeren.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -41,7 +42,6 @@ public class CreateUserActivity extends AppCompatActivity {
 
     // Deklarer en Long og String variabel
     Long key;
-    String iToString;
 
     // Deklarer en List variabel
     List<Object> one_time_keys_map;
@@ -88,14 +88,19 @@ public class CreateUserActivity extends AppCompatActivity {
 
                     key = (Long) one_time_keys_map.get(i);
 
-                    if (one_time_key.equals(String.valueOf(key))) {
+                    if (!one_time_key.equals("0")) {
+                        if (one_time_key.equals(String.valueOf(key))) {
 
-                        // Opretter en bruger med createAccount metoden
-                        createAccount(email, password);
+                            // Sletter værdien når den er brugt
+                            deleteValueInOneTimeKeys(i);
 
-                        account_created = true;
+                            // Opretter en bruger med createAccount metoden
+                            createAccount(email, password);
+
+                            account_created = true;
+                        }
+
                     }
-
                 }
 
                 // Kører hvis kontoen ikke blev oprettet
@@ -121,6 +126,13 @@ public class CreateUserActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText(CreateUserActivity.this, "Brugeren blev oprettet!", Toast.LENGTH_LONG).show();
                     FirebaseUser user = mAuth.getCurrentUser();
+
+                    // Åbner menuen efter brugeren er oprettet
+                    Intent openMenu = new Intent(CreateUserActivity.this, MenuActivity.class);
+                    startActivity(openMenu);
+
+                    // Lukker for activity
+                    finish();
                 } else {
                     Toast.makeText(CreateUserActivity.this, "Brugeren kunne ikke oprettes!", Toast.LENGTH_LONG).show();
                 }
@@ -150,5 +162,9 @@ public class CreateUserActivity extends AppCompatActivity {
         } catch (NullPointerException ex) {
             ex.printStackTrace();
         }
+    }
+
+    private void deleteValueInOneTimeKeys(int i) {
+        mDatabase.child("One Time Keys").child(String.valueOf(i)).setValue(0);
     }
 }

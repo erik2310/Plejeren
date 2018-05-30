@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "450740308364-f3dtvnkf0d162rem0a63gjp7hkp0vuf6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sovsen.plejeren",
+            "certificate_hash": "06379a5004722ce1ccc816c87dbd7c1bf4a7c54c"
+          }
+        },
+        {
           "client_id": "450740308364-a9sfpbdamke373nv2cj7path8cqnsan2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -29,6 +37,10 @@
             "package_name": "sovsen.plejeren",
             "certificate_hash": "8d2aad41c4174ec0dd078a6c6c5df51b68ba5d87"
           }
+        },
+        {
+          "client_id": "450740308364-mt41tojej45f49uh7utqtko4i3rfeac3.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "450740308364-mt41tojej45f49uh7utqtko4i3rfeac3.apps.googleusercontent.com",

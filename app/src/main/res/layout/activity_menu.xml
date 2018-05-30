@@ -26,13 +26,13 @@
         app:srcCompat="@drawable/byskjold" />
 
     <Button
-        android:id="@+id/Arbejdsplan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/workplan_button"
+        android:layout_width="310dp"
+        android:layout_height="61dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="50dp"
         android:text="@string/Arbejdsplan"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,15 +40,15 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185"
+        app:layout_constraintVertical_bias="0.0"
         tools:textAlignment="center"
         tools:textSize="18sp" />
 
     <Button
-        android:id="@+id/tidsstempling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/time_stamping_button"
+        android:layout_width="310dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -56,10 +56,9 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.807"
+        app:layout_constraintVertical_bias="1.0"
         tools:textAlignment="center"
         tools:textSize="18sp" />
 
