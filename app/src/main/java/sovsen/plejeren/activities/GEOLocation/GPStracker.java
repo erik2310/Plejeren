@@ -1,4 +1,4 @@
-package sovsen.plejeren.activities;
+package sovsen.plejeren.activities.GEOLocation;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
