@@ -5,4 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".activities.ClientListActivity">
 
+    <Button
+        android:id="@+id/Route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rute"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <Button
+        android:id="@+id/Client_1"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:text="Finn Holm"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="66dp" />
 </android.support.constraint.ConstraintLayout>
