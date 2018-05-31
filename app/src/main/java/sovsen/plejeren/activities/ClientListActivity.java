@@ -1,20 +1,21 @@
 package sovsen.plejeren.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import android.view.View;
-import android.widget.Button;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import sovsen.plejeren.R;
+import sovsen.plejeren.activities.ClientComponents.Client;
+import sovsen.plejeren.activities.ClientComponents.ClientAdapter;
 
 public class ClientListActivity extends AppCompatActivity {
 
@@ -24,43 +25,38 @@ public class ClientListActivity extends AppCompatActivity {
     // Deklarer en DatabaseReference variabel
     private DatabaseReference mDatabase;
 
-    private Button Client_1_Button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_list);
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item);
+        // final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item);
+
+        final ArrayList<Client> clientArrayList = new ArrayList<>();
+        final ClientAdapter mAdapter = new ClientAdapter(this, clientArrayList);
 
         // Sætter ListView med id clients_listview til mClients_ListView
         mClients_ListView = (ListView) findViewById(R.id.clients_listview);
-        mClients_ListView.setAdapter(arrayAdapter);
+        mClients_ListView.setAdapter(mAdapter);
 
         // Henter en instance af FirebaseDatabasens root
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        mDatabase.child("Clients").addChildEventListener(new ChildEventListener() {
+        mDatabase.child("Clients").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String myChildValues = (String) dataSnapshot.getValue();
-                arrayAdapter.add(myChildValues);
-                arrayAdapter.notifyDataSetChanged();
-            }
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Iterator iterator = dataSnapshot.getChildren().iterator();
+                while (iterator.hasNext()) {
+                    DataSnapshot childSnapshot = (DataSnapshot) iterator.next();
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                arrayAdapter.notifyDataSetChanged();
-            }
+                    String name = (String) childSnapshot.child("Name").getValue();
+                    String address = (String) childSnapshot.child("Address").getValue();
+                    String time = (String) childSnapshot.child("Time").getValue();
 
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                    clientArrayList.add(new Client(name, address, time));
 
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
+                    mAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -69,17 +65,5 @@ public class ClientListActivity extends AppCompatActivity {
             }
         });
 
-
-        Client_1_Button = (Button) findViewById(R.id.Client_1);
-
-        Client_1_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                Intent openWorkplan = new Intent(ClientListActivity.this, WorkplanActivity.class);
-                startActivity(openWorkplan);
-
-            }
-        });
     }
 }

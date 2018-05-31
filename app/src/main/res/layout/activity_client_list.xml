@@ -16,21 +16,9 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/Route"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rute"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="66dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/Client_1"
-        android:layout_width="163dp"
-        android:layout_height="wrap_content"
-        android:text="Finn Holm"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="66dp" />
 </android.support.constraint.ConstraintLayout>
