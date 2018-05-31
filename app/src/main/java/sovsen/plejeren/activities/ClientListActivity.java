@@ -51,8 +51,9 @@ public class ClientListActivity extends AppCompatActivity {
 
                     String name = (String) childSnapshot.child("Name").getValue();
                     String address = (String) childSnapshot.child("Address").getValue();
+                    String time = (String) childSnapshot.child("Time").getValue();
 
-                    clientArrayList.add(new Client(name, address));
+                    clientArrayList.add(new Client(name, address, time));
 
                     mAdapter.notifyDataSetChanged();
                 }

@@ -4,6 +4,19 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/clienttime_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="26dp"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/clientname_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

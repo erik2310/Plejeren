@@ -43,6 +43,9 @@ public class ClientAdapter extends ArrayAdapter<Client> {
         TextView address = (TextView) listItem.findViewById(R.id.clientaddress_textView);
         address.setText(currentClient.getmAddress());
 
+        TextView time = (TextView) listItem.findViewById(R.id.clienttime_textView);
+        time.setText(currentClient.getmTime());
+
         return listItem;
     }
 }
