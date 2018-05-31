@@ -1,7 +1,10 @@
 package sovsen.plejeren.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +27,11 @@ public class ClientListActivity extends AppCompatActivity {
 
     // Deklarer en DatabaseReference variabel
     private DatabaseReference mDatabase;
+
+    private static final String TAG = "ClientListActivity";
+
+
+    private Button btnCalender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +72,20 @@ public class ClientListActivity extends AppCompatActivity {
 
             }
         });
+        btnCalender = (Button)findViewById(R.id.btnCalender);
+
+        Intent incomingintent = getIntent();
+        String date = incomingintent.getStringExtra("date");
+        btnCalender.setText(date);
+
+        btnCalender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientListActivity.this, CalenderActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

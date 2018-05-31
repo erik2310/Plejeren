@@ -40,7 +40,8 @@
 
         <activity android:name=".activities.CreateUserActivity" />
         <activity android:name=".activities.MenuActivity" />
-        <activity android:name=".activities.ClientListActivity"></activity>
+        <activity android:name=".activities.ClientListActivity" />
+        <activity android:name=".activities.CalenderActivity" />
     </application>
 
 </manifest>
