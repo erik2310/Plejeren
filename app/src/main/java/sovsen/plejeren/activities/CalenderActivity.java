@@ -27,10 +27,25 @@ public class CalenderActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
 
-                String date = dayOfMonth + "/" + (month +1) +"/" + year;
-                Log.d(TAG,"onSelectedDayChange: dd/mm/yyyy: "+ date);
-                Intent intent = new Intent(CalenderActivity.this,ClientListActivity.class);
-                intent.putExtra("date",date);
+                String dayAsString;
+                String monthAsString;
+
+                if (month <= 8) {
+                    monthAsString = "0" + String.valueOf((month + 1));
+                } else {
+                    monthAsString = String.valueOf((month + 1));
+                }
+
+                if (dayOfMonth <= 9) {
+                    dayAsString = "0" + String.valueOf(dayOfMonth);
+                } else {
+                    dayAsString = String.valueOf(dayOfMonth);
+                }
+
+                String date = dayAsString + "/" + monthAsString + "/" + year;
+                Log.d(TAG, "onSelectedDayChange: dd/mm/yyyy: " + date);
+                Intent intent = new Intent(CalenderActivity.this, ClientListActivity.class);
+                intent.putExtra("date", date);
                 startActivity(intent);
 
 

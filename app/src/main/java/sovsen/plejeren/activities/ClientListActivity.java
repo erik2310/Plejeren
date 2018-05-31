@@ -13,7 +13,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 import sovsen.plejeren.R;
@@ -47,8 +49,16 @@ public class ClientListActivity extends AppCompatActivity {
         mClients_ListView = (ListView) findViewById(R.id.clients_listview);
         mClients_ListView.setAdapter(mAdapter);
 
+        btnCalender = (Button) findViewById(R.id.btnCalender);
+
         // Henter en instance af FirebaseDatabasens root
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        // Formaterer en dato så den bliver vist som dag, måned og år
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        // Laver et Date object
+        Date todaysDate = new Date();
 
         mDatabase.child("Clients").addValueEventListener(new ValueEventListener() {
             @Override
@@ -60,8 +70,11 @@ public class ClientListActivity extends AppCompatActivity {
                     String name = (String) childSnapshot.child("Name").getValue();
                     String address = (String) childSnapshot.child("Address").getValue();
                     String time = (String) childSnapshot.child("Time").getValue();
+                    String date = (String) childSnapshot.child("Date").getValue();
 
-                    clientArrayList.add(new Client(name, address, time));
+                    if (date.equals(btnCalender.getText().toString())) {
+                        clientArrayList.add(new Client(name, address, time));
+                    }
 
                     mAdapter.notifyDataSetChanged();
                 }
@@ -72,7 +85,6 @@ public class ClientListActivity extends AppCompatActivity {
 
             }
         });
-        btnCalender = (Button)findViewById(R.id.btnCalender);
 
         Intent incomingintent = getIntent();
         String date = incomingintent.getStringExtra("date");
@@ -86,6 +98,10 @@ public class ClientListActivity extends AppCompatActivity {
             }
         });
 
+        if (btnCalender.getText().toString().equals("")) {
+            // Sætter Calender button text til dagens dato
+            btnCalender.setText(dateFormat.format(todaysDate));
+        }
 
     }
 }
