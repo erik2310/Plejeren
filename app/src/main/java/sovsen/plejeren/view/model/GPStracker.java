@@ -1,4 +1,4 @@
-package sovsen.plejeren.activities.GEOLocation;
+package sovsen.plejeren.view.model;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+
 import static android.content.Context.LOCATION_SERVICE;
 
 public class GPStracker implements LocationListener {

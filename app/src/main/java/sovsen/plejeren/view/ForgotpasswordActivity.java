@@ -1,4 +1,4 @@
-package sovsen.plejeren.activities;
+package sovsen.plejeren.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

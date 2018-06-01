@@ -18,14 +18,14 @@
         android:label="Plejeren"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.LoginActivity">
+        <activity android:name=".view.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ForgotpasswordActivity" />
+        <activity android:name=".view.ForgotpasswordActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -38,10 +38,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activities.CreateUserActivity" />
-        <activity android:name=".activities.MenuActivity" />
-        <activity android:name=".activities.ClientListActivity" />
-        <activity android:name=".activities.CalenderActivity" />
+        <activity android:name=".view.CreateUserActivity" />
+        <activity android:name=".view.MenuActivity" />
+        <activity android:name=".view.ClientListActivity" />
+        <activity android:name=".view.CalenderActivity" />
     </application>
 
 </manifest>

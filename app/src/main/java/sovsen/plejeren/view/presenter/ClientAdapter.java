@@ -1,4 +1,4 @@
-package sovsen.plejeren.activities.ClientComponents;
+package sovsen.plejeren.view.presenter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

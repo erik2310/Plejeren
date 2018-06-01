@@ -1,4 +1,4 @@
-package sovsen.plejeren.activities;
+package sovsen.plejeren.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,8 +19,8 @@ import java.util.Date;
 import java.util.Iterator;
 
 import sovsen.plejeren.R;
-import sovsen.plejeren.activities.ClientComponents.Client;
-import sovsen.plejeren.activities.ClientComponents.ClientAdapter;
+import sovsen.plejeren.view.presenter.Client;
+import sovsen.plejeren.view.presenter.ClientAdapter;
 
 public class ClientListActivity extends AppCompatActivity {
 
