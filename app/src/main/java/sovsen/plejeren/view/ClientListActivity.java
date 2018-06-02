@@ -32,7 +32,7 @@ public class ClientListActivity extends AppCompatActivity {
 
     private static final String TAG = "ClientListActivity";
 
-
+    // Deklarer knappen til kalender
     private Button btnCalender;
 
     @Override
@@ -90,6 +90,7 @@ public class ClientListActivity extends AppCompatActivity {
         String date = incomingintent.getStringExtra("date");
         btnCalender.setText(date);
 
+        // Metode der får dig fra Clientlist, til CalenderActivity og som (passerer intentet).
         btnCalender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

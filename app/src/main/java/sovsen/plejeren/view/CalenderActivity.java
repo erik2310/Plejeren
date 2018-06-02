@@ -10,10 +10,11 @@ import android.widget.CalendarView;
 
 import sovsen.plejeren.R;
 
+// Extender AppCompatActivity, så vi kan bruge dets bibliotek.
 public class CalenderActivity extends AppCompatActivity {
 
     private static final String TAG = "CalenderActivity";
-
+// Laver CalenderView objektet.
     private CalendarView mCalendarView;
 
 
@@ -21,6 +22,7 @@ public class CalenderActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calender_layout);
+        //// Deklarer CalenderView objektet.
         mCalendarView = (CalendarView) findViewById(R.id.calendarView);
 
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
