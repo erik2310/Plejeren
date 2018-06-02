@@ -23,6 +23,15 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
         <activity android:name=".view.ForgotpasswordActivity" />
@@ -38,10 +47,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name="view.MainActivity"/>
         <activity android:name=".view.CreateUserActivity" />
         <activity android:name=".view.MenuActivity" />
         <activity android:name=".view.ClientListActivity" />
         <activity android:name=".view.CalenderActivity" />
+
     </application>
 
 </manifest>

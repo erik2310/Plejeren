@@ -18,7 +18,7 @@ public class GPStracker implements LocationListener {
         super();
         this.context = context;
     }
-
+            //Asking permission to use GPS
     public Location getLocation(){
         if (ContextCompat.checkSelfPermission( context, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED) {
             Log.e("fist","error");

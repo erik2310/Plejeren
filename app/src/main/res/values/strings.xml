@@ -8,4 +8,6 @@
     <string name="Arbejdsplan">Arbejdsplan</string>
     <string name="arbejdsplan">Arbejdsplan</string>
     <string name="TidsStempling">Tids Stempling</string>
+    <string name="hello_trackerone">hello_trackerone</string>
+    <string name="get_location">get_location</string>
 </resources>

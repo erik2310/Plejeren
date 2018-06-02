@@ -12,6 +12,7 @@ public class MenuActivity extends AppCompatActivity {
 
     // Deklarer en Button variabel
     private Button mWorkplan_button;
+    private Button mTime_stamping_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,17 @@ public class MenuActivity extends AppCompatActivity {
                 // Åbner ClientListActivity
                 Intent openClientList = new Intent(MenuActivity.this, ClientListActivity.class);
                 startActivity(openClientList);
+            }
+        });
+        // Sætter button med id time_stamping_button til mTime_stamping_button
+        mTime_stamping_button = (Button) findViewById(R.id.time_stamping_button);
+
+        mTime_stamping_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Åbner MainActivity
+                Intent openMain = new Intent(MenuActivity.this, MainActivity.class);
+                startActivity(openMain);
             }
         });
     }
