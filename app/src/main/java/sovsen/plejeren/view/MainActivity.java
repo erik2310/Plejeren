@@ -18,6 +18,7 @@ import sovsen.plejeren.view.model.GPStracker;
 public class MainActivity extends AppCompatActivity {
 
     Button btnLoc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
