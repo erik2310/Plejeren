@@ -42,11 +42,16 @@ public class ClientListActivity extends AppCompatActivity {
 
         // final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item);
 
+        // En ArrayList der kan indeholde Client objekter
         final ArrayList<Client> clientArrayList = new ArrayList<>();
+
+        // En custom ArrayAdapter som fungerer sammen med clientArrayList
         final ClientAdapter mAdapter = new ClientAdapter(this, clientArrayList);
 
         // Sætter ListView med id clients_listview til mClients_ListView
         mClients_ListView = (ListView) findViewById(R.id.clients_listview);
+
+        // Sætter ListView til at bruge ClientAdapter
         mClients_ListView.setAdapter(mAdapter);
 
         btnCalender = (Button) findViewById(R.id.btnCalender);

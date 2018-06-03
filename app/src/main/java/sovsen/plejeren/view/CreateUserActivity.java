@@ -84,11 +84,16 @@ public class CreateUserActivity extends AppCompatActivity {
                 String email = mEmail_field.getText().toString();
                 String password = mPassword_field.getText().toString();
 
+                // Kører igennem hele løkken for at finde en key
                 for (int i = 0; i < one_time_keys_map.size(); i++) {
 
+                    // Henter en key fra one_time_keys_map position i og caster den til Long og gemmer den i key
                     key = (Long) one_time_keys_map.get(i);
 
+                    // Kører kun hvis engangsnøglen ikke er 0
                     if (!one_time_key.equals("0")) {
+
+                        // Kører kun hvis engangsnøglen er den samme som den der blev hentet fra databasen
                         if (one_time_key.equals(String.valueOf(key))) {
 
                             // Sletter værdien når den er brugt
@@ -118,6 +123,7 @@ public class CreateUserActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
 
+    // Metode til at lave en ny konto
     private void createAccount(String email, String password) {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -140,6 +146,7 @@ public class CreateUserActivity extends AppCompatActivity {
         });
     }
 
+    // Metode til at hente One Time Keys fra databasen
     private void getOne_Time_Key_Values() {
         try {
 
@@ -148,6 +155,7 @@ public class CreateUserActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
+                    // Henter værdierne og caster dem til List<Object> og gemmer dem i one_time_keys_map
                     one_time_keys_map = (List<Object>) dataSnapshot.getValue();
 
                 }
@@ -164,6 +172,7 @@ public class CreateUserActivity extends AppCompatActivity {
         }
     }
 
+    // Metode til at slette en key når den er blevet brugt
     private void deleteValueInOneTimeKeys(int i) {
         mDatabase.child("One Time Keys").child(String.valueOf(i)).setValue(0);
     }
