@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -38,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
                     double lon = l.getLongitude();
                     Date currentTime = Calendar.getInstance().getTime();
                     Toast.makeText(getApplicationContext(),"GPS Lat = "+lat+"\n lon = "+lon+"\n Tidspunkt = "+currentTime,Toast.LENGTH_SHORT).show();
+
+                    // Write TimeStamp to the database
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference();
+
+                    myRef.push().setValue("GPS Lat = "+lat+"\n lon = "+lon+"\n Tidspunkt = "+currentTime,Toast.LENGTH_SHORT);
                 }
             }
         });
