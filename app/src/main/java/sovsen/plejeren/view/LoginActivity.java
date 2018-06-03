@@ -118,4 +118,15 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+
+    /*  Lavet til et andet formål
+
+    public void startMenuActivity() {
+        // Åbner menuen efter brugeren er oprettet
+        Intent openMenu = new Intent(LoginActivity.this, MenuActivity.class);
+        startActivity(openMenu);
+    }
+*/
+
 }
