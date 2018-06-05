@@ -14,10 +14,22 @@ public class MenuActivity extends AppCompatActivity {
     private Button mWorkplan_button;
     private Button mTime_stamping_button;
 
+    private Button button2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+
+        button2 = (Button) findViewById(R.id.button);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWorkplan();
+            }
+        });
+
 
         // Sætter button med id workplan_button til mWorkplan_button
         mWorkplan_button = (Button) findViewById(R.id.workplan_button);
@@ -42,4 +54,11 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void openWorkplan() {
+        Intent intent = new Intent(this, WorkplanActivity.class);
+        startActivity(intent);
+    }
+
+
 }
