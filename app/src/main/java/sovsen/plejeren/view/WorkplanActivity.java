@@ -1,7 +1,7 @@
 package sovsen.plejeren.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.Task;
@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sovsen.plejeren.R;
+import sovsen.plejeren.view.presenter.TaskList;
 
 
 public class WorkplanActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class WorkplanActivity extends AppCompatActivity {
 
     ListView listViewTask;
 
-    List<sovsen.plejeren.view.Task> taskList;
+    List<sovsen.plejeren.view.presenter.Task> taskList;
 
     Task task;
 
@@ -50,7 +51,7 @@ public class WorkplanActivity extends AppCompatActivity {
 
                 for(DataSnapshot taskSnapshot : dataSnapshot.getChildren()){
                     DataSnapshot childsnapshot = taskSnapshot.child("Name");
-                    sovsen.plejeren.view.Task task = childsnapshot.getValue(sovsen.plejeren.view.Task.class);
+                    sovsen.plejeren.view.presenter.Task task = childsnapshot.getValue(sovsen.plejeren.view.presenter.Task.class);
 
                     taskList.add(task);
                 }

@@ -1,4 +1,4 @@
-package sovsen.plejeren.view;
+package sovsen.plejeren.view.presenter;
 
 public class Task {
 
