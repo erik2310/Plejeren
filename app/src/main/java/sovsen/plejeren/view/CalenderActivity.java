@@ -32,12 +32,14 @@ public class CalenderActivity extends AppCompatActivity {
                 String dayAsString;
                 String monthAsString;
 
+                // Sætter et 0 foran tallet i month og gemmer det som String, hvis tallet er fra 0 til 8, ellers gør den det ikke
                 if (month <= 8) {
                     monthAsString = "0" + String.valueOf((month + 1));
                 } else {
                     monthAsString = String.valueOf((month + 1));
                 }
 
+                // Sætter et 0 foran tallet i dayOfMonth og gemmer det som String, hvis tallet er fra 0 til 9, ellers gør den det ikke
                 if (dayOfMonth <= 9) {
                     dayAsString = "0" + String.valueOf(dayOfMonth);
                 } else {
