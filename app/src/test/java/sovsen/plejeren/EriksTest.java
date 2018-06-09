@@ -12,7 +12,7 @@ public class EriksTest {
     Task task = new Task("Rengøring");
 
     @Test
-    public void testLoginButton() {
+    public void testTask() {
 
         // Tester om Rengøring bliver hentet som String fra task objektet
         assertEquals("Rengøring", task.getTaskName());
