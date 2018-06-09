@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     // Metode til at logge ind
-    private void signIn(String email, String password) {
+    public void signIn(String email, String password) {
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
