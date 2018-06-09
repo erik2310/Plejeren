@@ -1,27 +1,21 @@
 package sovsen.plejeren;
 
-import android.app.Activity;
-import android.widget.Button;
-
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
+import sovsen.plejeren.view.presenter.Task;
+
+import static org.junit.Assert.assertEquals;
 
 public class EriksTest {
 
-    // Deklarer en Button variabel
-    private Button mLogin_button;
-
-    Activity activity = new Activity();
+    // Laver et task objekt
+    Task task = new Task("Rengøring");
 
     @Test
     public void testLoginButton() {
 
-        // Sætter knappen med id login_button til mLogin_button variabel
-        mLogin_button = (Button) activity.findViewById(R.id.login_button);
-
-        // Tjekker om objektet ikke er null
-        assertNotNull(mLogin_button);
+        // Tester om Rengøring bliver hentet som String fra task objektet
+        assertEquals("Rengøring", task.getTaskName());
 
     }
 
