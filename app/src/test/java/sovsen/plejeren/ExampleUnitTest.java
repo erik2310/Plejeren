@@ -1,6 +1,11 @@
 package sovsen.plejeren;
 
+import android.app.Instrumentation;
+import android.widget.Button;
+
 import org.junit.Test;
+
+import sovsen.plejeren.view.WorkplanActivity;
 
 import static org.junit.Assert.*;
 
@@ -14,9 +19,11 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
-
-public void svar1_isCorrect() throws Exception {
-    int svarA = 1;
-    assertEquals(svarA, 2);
+    @Test
+    public void svar1_isCorrect() throws Exception {
+        int svarA = 2;
+        assertEquals(svarA, 2);
     }
+
+
 }
