@@ -12,7 +12,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import sovsen.plejeren.R;
 import sovsen.plejeren.view.presenter.TaskList;
@@ -24,7 +23,9 @@ public class WorkplanActivity extends AppCompatActivity {
 
     ListView listViewTask;
 
-    List<sovsen.plejeren.view.presenter.Task> taskList;
+    ArrayList<sovsen.plejeren.view.presenter.Task> taskArrayList;
+
+    TaskList adapter;
 
     Task task;
 
@@ -37,7 +38,11 @@ public class WorkplanActivity extends AppCompatActivity {
 
         listViewTask = (ListView) findViewById(R.id.listViewTask);
 
-        taskList = new ArrayList<>();
+        taskArrayList = new ArrayList<>();
+
+        adapter = new TaskList(WorkplanActivity.this, taskArrayList);
+
+        listViewTask.setAdapter(adapter);
 
     }
 
@@ -49,15 +54,15 @@ public class WorkplanActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                for(DataSnapshot taskSnapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot taskSnapshot : dataSnapshot.getChildren()) {
                     DataSnapshot childsnapshot = taskSnapshot.child("Name");
-                    sovsen.plejeren.view.presenter.Task task = childsnapshot.getValue(sovsen.plejeren.view.presenter.Task.class);
+                    String taskName = (String) childsnapshot.getValue();
 
-                    taskList.add(task);
+                    taskArrayList.add(new sovsen.plejeren.view.presenter.Task(taskName));
                 }
 
-                TaskList adapter = new TaskList(WorkplanActivity.this, taskList);
-                listViewTask.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+
             }
 
             @Override
