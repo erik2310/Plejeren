@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        defaultConfig {
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "sovsen.plejeren"
@@ -18,7 +22,6 @@ android {
     }
     productFlavors {
     }
-
     testOptions {
         unitTests.returnDefaultValues = true
     }
