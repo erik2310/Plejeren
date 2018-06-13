@@ -9,7 +9,6 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -23,13 +22,11 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
         <activity android:name=".view.ForgotpasswordActivity" />
@@ -49,7 +46,9 @@
         <activity android:name=".view.MenuActivity" />
         <activity android:name=".view.ClientListActivity" />
         <activity android:name=".view.CalenderActivity" />
-        <activity android:name=".view.WorkplanActivity"></activity>
+        <activity android:name=".view.WorkplanActivity" />
+        <activity android:name=".view.NotesActivity" />
+
     </application>
 
 </manifest>
