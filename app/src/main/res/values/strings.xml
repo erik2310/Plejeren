@@ -11,10 +11,17 @@
     <string name="hello_trackerone">hello_trackerone</string>
     <string name="get_location">get_location</string>
     <string name="workplan">Workplan!</string>
-    <string name="e_mail">E-mail</string>
-    <string name="kodeord">Kodeord</string>
     <string name="opret_bruger">opret bruger</string>
-    <string name="plejeren">plejeren</string>
     <string name="engangsn_gle">Engangsnøgle</string>
     <string name="button">Button</string>
+    <string name="_00_00">00:00</string>
+    <string name="textview">TextView</string>
+    <string name="kalender">Kalender</string>
+    <string name="nulstil_kodeord">nulstil kodeord</string>
+    <string name="opret_en_bruger">Opret en bruger</string>
+    <string name="plejeren">plejeren</string>
+    <string name="e_mail">E-mail</string>
+    <string name="kodeord">Kodeord</string>
+    <string name="login">login</string>
+    <string name="glemt_dit_kodeord">Glemt dit kodeord?</string>
 </resources>

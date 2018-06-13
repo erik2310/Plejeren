@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference();
 
-                    myRef.push().setValue("GPS Lat = "+lat+"\n lon = "+lon+"\n Tidspunkt = "+currentTime,Toast.LENGTH_SHORT);
+                    myRef.child("Timestamp").push().setValue("GPS Lat = "+lat+"\n lon = "+lon+"\n Tidspunkt = "+currentTime,Toast.LENGTH_SHORT);
                 }
             }
         });
