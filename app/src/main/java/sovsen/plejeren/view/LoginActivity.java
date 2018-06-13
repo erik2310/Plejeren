@@ -65,8 +65,12 @@ public class LoginActivity extends AppCompatActivity {
                 String email = mEmail_field.getText().toString();
                 String password = mPassword_field.getText().toString();
 
-                // Logger ind med e-mail og password
-                signIn(email, password);
+                try {
+                    // Logger ind med e-mail og password
+                    signIn(email, password);
+                } catch (IllegalArgumentException ex) {
+                    Toast.makeText(LoginActivity.this, "Indtast en e-mail og/eller password!", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -113,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 } else {
 
-                    Toast.makeText(LoginActivity.this, "Login fejlede!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Forkert e-mail eller password!\n" + "Ellers tjek din internet forbindelse!", Toast.LENGTH_LONG).show();
                 }
             }
         });

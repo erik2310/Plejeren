@@ -84,28 +84,32 @@ public class CreateUserActivity extends AppCompatActivity {
                 String email = mEmail_field.getText().toString();
                 String password = mPassword_field.getText().toString();
 
-                // Kører igennem hele løkken for at finde en key
-                for (int i = 0; i < one_time_keys_map.size(); i++) {
+                try {
+                    // Kører igennem hele løkken for at finde en key
+                    for (int i = 0; i < one_time_keys_map.size(); i++) {
 
-                    // Henter en key fra one_time_keys_map position i og caster den til Long og gemmer den i key
-                    key = (Long) one_time_keys_map.get(i);
+                        // Henter en key fra one_time_keys_map position i og caster den til Long og gemmer den i key
+                        key = (Long) one_time_keys_map.get(i);
 
-                    // Kører kun hvis engangsnøglen ikke er 0
-                    if (!one_time_key.equals("0")) {
+                        // Kører kun hvis engangsnøglen ikke er 0
+                        if (!one_time_key.equals("0")) {
 
-                        // Kører kun hvis engangsnøglen er den samme som den der blev hentet fra databasen
-                        if (one_time_key.equals(String.valueOf(key))) {
+                            // Kører kun hvis engangsnøglen er den samme som den der blev hentet fra databasen
+                            if (one_time_key.equals(String.valueOf(key))) {
 
-                            // Sletter værdien når den er brugt
-                            deleteValueInOneTimeKeys(i);
+                                // Sletter værdien når den er brugt
+                                deleteValueInOneTimeKeys(i);
 
-                            // Opretter en bruger med createAccount metoden
-                            createAccount(email, password);
+                                // Opretter en bruger med createAccount metoden
+                                createAccount(email, password);
 
-                            account_created = true;
+                                account_created = true;
+                            }
+
                         }
-
                     }
+                } catch (NullPointerException ex) {
+                    ex.printStackTrace();
                 }
 
                 // Kører hvis kontoen ikke blev oprettet

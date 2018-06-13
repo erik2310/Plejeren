@@ -45,7 +45,7 @@ public class ForgotpasswordActivity extends AppCompatActivity {
 
                 // Gemmer email i en String datatype
                 String email = mEmail_field.getText().toString();
-
+                try {
                 mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -56,7 +56,9 @@ public class ForgotpasswordActivity extends AppCompatActivity {
                         }
                     }
                 });
-
+                } catch (IllegalArgumentException ex) {
+                    Toast.makeText(ForgotpasswordActivity.this, "Indtast en e-mail!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
