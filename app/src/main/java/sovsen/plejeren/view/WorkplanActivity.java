@@ -30,7 +30,7 @@ public class WorkplanActivity extends AppCompatActivity implements AdapterView.O
 
     ArrayList<sovsen.plejeren.view.presenter.Task> taskArrayList;
 
-    TaskList adapter;
+    TaskList taskAdapter;
 
     Task task;
 
@@ -45,9 +45,9 @@ public class WorkplanActivity extends AppCompatActivity implements AdapterView.O
 
         taskArrayList = new ArrayList<>();
 
-        adapter = new TaskList(WorkplanActivity.this, taskArrayList);
+        taskAdapter = new TaskList(WorkplanActivity.this, taskArrayList);
 
-        listViewTask.setAdapter(adapter);
+        listViewTask.setAdapter(taskAdapter);
 
         Spinner spinner = findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.tasks_array, android.R.layout.simple_spinner_item);
@@ -74,7 +74,7 @@ public class WorkplanActivity extends AppCompatActivity implements AdapterView.O
                     taskArrayList.add(new sovsen.plejeren.view.presenter.Task(taskName));
                 }
 
-                adapter.notifyDataSetChanged();
+                taskAdapter.notifyDataSetChanged();
 
             }
 
