@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -108,6 +111,15 @@ public class ClientListActivity extends AppCompatActivity {
             // Sætter Calender button text til dagens dato
             btnCalender.setText(dateFormat.format(todaysDate));
         }
+
+        // Kører når man trykker på en item i client listview.
+        mClients_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView name = (TextView) view.findViewById(R.id.clientname_textView);
+                Toast.makeText(ClientListActivity.this, name.getText().toString(), Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 }
