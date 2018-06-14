@@ -6,14 +6,17 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import sovsen.plejeren.R;
 
-public class TaskList extends ArrayAdapter<Task>{
+public class TaskList extends ArrayAdapter<Task> {
 
     private Activity context;
     private List<Task> taskList;
@@ -38,4 +41,7 @@ public class TaskList extends ArrayAdapter<Task>{
 
         return listViewItem;
     }
+
+
+
 }

@@ -25,4 +25,12 @@
     <string name="login">login</string>
     <string name="glemt_dit_kodeord">Glemt dit kodeord?</string>
     <string name="NOTER">NOTER</string>
+
+    <string-array name="tasks_array">
+        <item>Rengøring</item>
+        <item>Vask</item>
+        <item>Oprydning</item>
+        <item>Dosering af piller</item>
+        <item>Indkøb</item>
+    </string-array>
 </resources>
