@@ -49,12 +49,14 @@ public class WorkplanActivity extends AppCompatActivity implements AdapterView.O
 
         listViewTask.setAdapter(taskAdapter);
 
-        Spinner spinner = findViewById(R.id.spinner1);
+        Spinner spinner1 = findViewById(R.id.spinner1);
+        Spinner spinner2 = findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.tasks_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
+        spinner1.setAdapter(adapter);
+        spinner2.setAdapter(adapter);
+        spinner1.setOnItemSelectedListener(this);
+        spinner2.setOnItemSelectedListener(this);
 
 
     }
