@@ -48,7 +48,6 @@
         <activity android:name=".view.CalenderActivity" />
         <activity android:name=".view.WorkplanActivity" />
         <activity android:name=".view.NotesActivity" />
-
     </application>
 
 </manifest>

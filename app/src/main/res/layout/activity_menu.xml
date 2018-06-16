@@ -78,4 +78,19 @@
         app:layout_constraintVertical_bias="0.718"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/notes_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/NOTER"
+        android:text="@string/noter"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Noter" />
+
 </android.support.constraint.ConstraintLayout>

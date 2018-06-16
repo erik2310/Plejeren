@@ -24,7 +24,9 @@
     <string name="kodeord">Kodeord</string>
     <string name="login">login</string>
     <string name="glemt_dit_kodeord">Glemt dit kodeord?</string>
+    <string name="noter">Noter</string>
     <string name="NOTER">NOTER</string>
+    <string name="gem">Gem</string>
 
     <string-array name="tasks_array">
         <item>Rengøring</item>

@@ -13,7 +13,7 @@ public class MenuActivity extends AppCompatActivity {
     // Deklarer en Button variabel
     private Button mWorkplan_button;
     private Button mTime_stamping_button;
-
+    private Button mNotes_button;
     private Button button2;
 
     @Override
@@ -53,12 +53,23 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(openMain);
             }
         });
+
+
+        // Sætter button med id notes_button til mNotes_button
+        mNotes_button = findViewById(R.id.notes_button);
+
+        mNotes_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Åbner NotesActivity
+                Intent openNotes = new Intent(MenuActivity.this, NotesActivity.class);
+                startActivity(openNotes);
+            }
+        });
     }
 
     private void openWorkplan() {
         Intent intent = new Intent(this, WorkplanActivity.class);
         startActivity(intent);
     }
-
-
 }
