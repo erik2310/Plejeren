@@ -27,6 +27,7 @@
     <string name="noter">Noter</string>
     <string name="NOTER">NOTER</string>
     <string name="gem">Gem</string>
+    <string name="logout">logout</string>
 
     <string-array name="tasks_array">
         <item>Rengøring</item>

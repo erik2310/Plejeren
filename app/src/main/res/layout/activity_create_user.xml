@@ -16,6 +16,7 @@
         android:ems="10"
         android:hint="@string/e_mail"
         android:inputType="textEmailAddress"
+        android:textColorLink="@android:color/holo_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/one_time_key_field_view" />
@@ -30,6 +31,7 @@
         android:ems="10"
         android:hint="@string/kodeord"
         android:inputType="textPassword"
+        android:textColorLink="@android:color/holo_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_field_view" />
@@ -72,6 +74,7 @@
         android:ems="10"
         android:hint="@string/engangsn_gle"
         android:inputType="number"
+        android:textColorLink="@android:color/holo_blue_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plejeren_imageView" />
