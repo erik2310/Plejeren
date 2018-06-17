@@ -4,27 +4,25 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import sovsen.plejeren.R;
 
-import static sovsen.plejeren.view.presenter.User.getEmail;
 
 public class NotesActivity extends AppCompatActivity {
     String uid;
-    DatabaseReference myRef;
+//  DatabaseReference myRef;
     private Button mGem_button;
-//  Deklarer en FirebaseAuth variabel
-    private FirebaseAuth mAuth;
     // Deklarer en Database Reference variabel
     private DatabaseReference mDatabase;
     String email;
-
+    String editText;
+    String Notes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,16 +30,18 @@ public class NotesActivity extends AppCompatActivity {
 
 
         // Henter en instance af FirebaseDatabasen
-        myRef = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+/*
         if (user != null) {
             for (UserInfo profile : user.getProviderData()) {
                 // UID specific to the provider
                 uid = profile.getUid();
             }
         }
+*/
 
         if (user != null) {
             // User is signed in
@@ -49,21 +49,19 @@ public class NotesActivity extends AppCompatActivity {
         } else {
             // No user is signed in
             }
-
+        Toast.makeText(getApplicationContext(), "User Email: "+user.getEmail(), Toast.LENGTH_SHORT).show();
 
         // Sætter button med id gem til mGem_button
         mGem_button = findViewById(R.id.gem);
         mGem_button.setOnClickListener(new View.OnClickListener() {
 
+
             public void onClick(View v) {
-                // Gemmer NotesActivity
-
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                myRef = database.getReference();
+                mDatabase = database.getReference();
 
-                myRef.child(getEmail());
-
- //               myRef.child("User").child("email").push().setValue("TEST");
+                // Gemmer NotesActivity
+                mDatabase.child("Notes").push().child("User:").setValue("Email: ",user.getEmail()+ " Noter: ");
             }
 
  /*       final ValueEventListener notes = mDatabase.addValueEventListener(new ValueEventListener() {

@@ -6,6 +6,8 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class Notes {
     private String Notes;
 
+    public Notes() {
+    }
 
     public Notes(String notes) {
         this.Notes = notes;

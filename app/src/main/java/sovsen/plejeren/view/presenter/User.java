@@ -23,7 +23,7 @@ public class User {
         return uid;
     }
 
-    public static String getEmail() {
+    public static String getEmail(String email) {
         return Email;
     }
 }
