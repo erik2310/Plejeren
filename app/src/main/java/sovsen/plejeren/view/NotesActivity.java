@@ -32,7 +32,7 @@ public class NotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
-        BtnSave_button = (Button)findViewById(R.id.BtnSave);
+        BtnSave_button = (Button) findViewById(R.id.BtnSave);
 
         //To retreive the Data from Sharepreferences
 
@@ -40,24 +40,27 @@ public class NotesActivity extends AppCompatActivity {
         String st1 = prefs.getString("st", st);
         edt2.setText(st1);
 */
+        try {
+            BtnSave_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-        BtnSave_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                    st = edt2.getText().toString();
+                    //To save the data
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(NotesActivity.this);
+                    SharedPreferences.Editor editor = prefs.edit();
 
-                st = edt2.getText().toString();
-                //To save the data
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(NotesActivity.this);
-                SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("st", st);
+                    editor.apply();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
 
-                editor.putString("st",st);
-                editor.apply();
-            }
-        });
-        // Henter en instance af FirebaseDatabasen
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+            // Henter en instance af FirebaseDatabasen
+            mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 /*
         if (user != null) {
@@ -68,13 +71,13 @@ public class NotesActivity extends AppCompatActivity {
         }
 */
 
-        if (user != null) {
-            // User is signed in
-            String email = user.getEmail();
-        } else {
-            // No user is signed in
-        }
-        Toast.makeText(getApplicationContext(), "User Email: "+user.getEmail(), Toast.LENGTH_SHORT).show();
+            if (user != null) {
+                // User is signed in
+                String email = user.getEmail();
+            } else {
+                // No user is signed in
+            }
+            Toast.makeText(getApplicationContext(), "User Email: " + user.getEmail(), Toast.LENGTH_SHORT).show();
 
 /*        mGem_button = findViewById(R.id.gem);
         // Sætter button med id gem til mGem_button
@@ -107,5 +110,6 @@ public class NotesActivity extends AppCompatActivity {
         });
 
         });*/
+        }
     }
 }
