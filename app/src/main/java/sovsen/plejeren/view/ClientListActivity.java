@@ -99,6 +99,7 @@ public class ClientListActivity extends AppCompatActivity {
         });
         //Metode der opfanger alle intent der kommer til Activitien.
         Intent incomingintent = getIntent();
+        // Henter keyvalue der er "date".
         String date = incomingintent.getStringExtra("date");
         btnCalender.setText(date);
 
