@@ -51,6 +51,7 @@ public class CalenderActivity extends AppCompatActivity {
                 Log.d(TAG, "onSelectedDayChange: dd/mm/yyyy: " + date);
                 // Tager dig fra CalenderActivity og tilbage til ClientListActivity når du trykker på en dato og viser den
                 Intent intent = new Intent(CalenderActivity.this, ClientListActivity.class);
+                //Sætter keyvalue, med navnet date og hvad det er.
                 intent.putExtra("date", date);
                 startActivity(intent);
 
